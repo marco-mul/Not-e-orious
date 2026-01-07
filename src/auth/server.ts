@@ -29,11 +29,11 @@ export async function createClient() {
 
 export async function getUser() {
     const { auth } = await createClient();
-    const userObject = await auth.getUser();
+    const userObject = await auth.getClaims();
 
     if(userObject.error) {
         console.error(userObject.error);
         return null;
     }
-    return userObject.data.user;
+    return userObject.data?.claims;
 }

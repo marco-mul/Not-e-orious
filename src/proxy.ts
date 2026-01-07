@@ -41,7 +41,7 @@ export async function updateSession(request: NextRequest) {
   //         supabaseResponse = NextResponse.next({
   //           request,
   //         })
-  //         cookiesToSet.forEach(({ name, value }) => supabaseResponse.cookies.set(name, value))
+  //         cookiesToSet.forEach(({ name, value, options }) => supabaseResponse.cookies.set(name, value, options))
   //       },
   //     },
   //   }
@@ -53,8 +53,8 @@ export async function updateSession(request: NextRequest) {
 
   // IMPORTANT: If you remove getClaims() and you use server-side rendering
   // with the Supabase client, your users may be randomly logged out.
+  
   // const { data } = await supabase.auth.getClaims()
-
   // const user = data?.claims
 
 
