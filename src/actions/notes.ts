@@ -5,6 +5,7 @@ import { prisma } from "@/db/prisma";
 import { handleError } from "@/lib/utils";
 import { ChatCompletionMessageParam } from "openai/resources/index.mjs";
 import openai from "@/openai";
+import { revalidatePath } from "next/cache";
 
 
 export const createNoteAction = async (noteId: string) => {
@@ -23,6 +24,9 @@ export const createNoteAction = async (noteId: string) => {
             },
         });
       
+        // we use revalidatePath() to ensure the new note
+        // appears directly in the sidebar 
+        revalidatePath("/");
 
         return { errorMessage: null };
     } catch (error) {

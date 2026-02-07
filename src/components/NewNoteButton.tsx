@@ -1,5 +1,6 @@
 "use client"
 
+
 import { User } from "@supabase/supabase-js";
 import { Button } from "./ui/button";
 import { Loader2 } from "lucide-react";
@@ -30,6 +31,8 @@ function NewNoteButton({user}: Props) {
         //router.refresh();
         toast.success("New note created!");
         setLoading(false);
+        
+        
     }
   }
   return (
