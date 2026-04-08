@@ -75,7 +75,7 @@ function AuthForm({ type }: Props) {
                 <p className="text-xs">
                     {isLoginForm ? "Don't have an account yet?"
                     : "Already have an account?"}{" "}
-                    <Link href={isLoginForm ? "/signup" : "/login"} className={`text-blue-500 underline ${isPending ? "pointer-events-none opacity-50" : "" }`} >
+                    <Link href={isLoginForm ? "/sign-up" : "/login"} className={`text-blue-500 underline ${isPending ? "pointer-events-none opacity-50" : "" }`} >
                         {isLoginForm ? "Sign Up" : "Login"}
                     </Link>
                 </p>
